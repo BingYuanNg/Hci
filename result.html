@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
 
       <title>title</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- jquery -->
       <script src="jquery.min.js"></script>
@@ -50,7 +51,11 @@
         }
 
         .parallax-container {
-          height: "1000px";
+          height:300px;
+        }
+
+        .carousel {
+          height:200px;
         }
       </style>
     </head>
@@ -118,7 +123,7 @@
 
     <!-- image -->
     <div class="parallax-container">
-      <img class="materialboxed" src="img/sunflower.jpg">
+      <img class="materialboxed" src="img/sunflower.jpg" width="100%">
     </div>
 
 
@@ -173,20 +178,37 @@
 
         <!-- carousel2 -->
         <div class="carousel">
-          <a class="carousel-item" href="#one!"><img src="img/sunflower.jpg"></a>
+          <a class="carousel-item" href="#one!"><img width="100%" src="img/sunflower.jpg"></a>
           <a class="carousel-item" href="#two!"><img src="img/bunch_of_sunflower.jpg"></a>
         </div>
       </div>
 
 
 
+      <!-- Modal Trigger -->
+      <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+      <!-- Modal Structure -->
 
 
 
 
       <!-- share button -->
       <div class="row container">
-        <a class="btn tooltipped right waves-effect waves-light " data-position="left" data-delay="50" data-tooltip="Share to Facebook!">Share</a>
+        <a class="btn tooltipped right waves-effect waves-light modal-trigger" data-position="left" data-delay="50" data-tooltip="Share to Facebook!" href="#modal1">Share</a>
+      </div>
+
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Request for Permission</h4>
+          <p>Access my basic information</p>
+          <p>Allow to post to timeline</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="Materialize.toast('Photo shared!', 2000)">
+            Allow
+          </a>
+        </div>
       </div>
 
 
@@ -220,9 +242,16 @@
     });
     $(document).ready(function(){
       // $('.materialboxed').materialbox();
-
       $('.carousel').carousel();
     });
+
+    $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal();
+    });
+
+    // manually call toast
+    // Materialize.toast('I am a toast!', 4000) // 4000 is the duration of the toast
 
 
 
