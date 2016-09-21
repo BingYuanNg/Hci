@@ -4,20 +4,46 @@
     <title>title</title>
     <link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+    <style type="text/css" href="font-awesome-4.6.3/css/font-awesome.min.css">
+        
+    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
   </head>
   <style type="text/css">
       html,body {
         height: 100%;
+        overflow: hidden;
       }
       #video {
-        height: 80%;
+        height:95%;
+        position: relative;
+        top:0;
+        left: 0;
+        right:0;
       }
-      .header {
-        w
+      .footer {
+        position:absolute;
+        height:10%;
+        background-color: rgba(0,0,0,0.8);
+        bottom:0;
+        left:0;
+        right:0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .snap-button {
+        height :75px;
+        width:75px;
+        border-radius: 50%;
       }
   </style>
   <body>
@@ -40,7 +66,7 @@
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Logo</a>
+          <a href="#" class="brand-logo">FlowerWorks</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="sass.html">Sass</a></li>
             <li><a href="badges.html">Components</a></li>
@@ -50,9 +76,16 @@
       </nav>
       
   </div>
-    <video id="video" autoplay></video>
-    <button id="snap">Snap Photo</button>
-    <canvas id="canvas" width="640" height="480"></canvas>
+    <video id="video" witdh="100%" autoplay></video>
+    <div class="footer">
+        <center>
+        <div>
+            <button class="snap-button"><i id="snap" class="fa fa-camera"</i></center></button>
+        </div>
+    </div>
+    
+
+    <canvas id="canvas"></canvas>
     
       <i class="material-icons">add</i>
 
