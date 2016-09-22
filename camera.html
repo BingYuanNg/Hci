@@ -111,9 +111,12 @@
 
 
     <script>
-          
+    $(document).ready(function($) {
+     
+      
     var videoElement = document.querySelector('video');
     var videoSelect = document.querySelector('select#videoSource');
+    var lastChild = document.querySelector('select#videoSource:last-child');
 
     navigator.getUserMedia = navigator.getUserMedia ||
       navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
@@ -124,7 +127,7 @@
         var option = document.createElement('option');
         option.value = sourceInfo.id;
         if (sourceInfo.kind === 'video') {
-          option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
+          option.text = 'camera ' + (videoSelect.length + 1);
           videoSelect.appendChild(option);
         } else {
           console.log('Some other kind of source: ', sourceInfo);
@@ -154,7 +157,7 @@
         videoElement.src = null;
         window.stream.stop();
       }
-      var videoSource = videoSelect.value;
+      var videoSource = lastChild.value;
       var constraints = {
         video: {
           optional: [{sourceId: videoSource}]
@@ -201,6 +204,8 @@
           }, errBack);
       }
       */
+     
+    });
     </script>
   </body>
 </html>
