@@ -1,0 +1,244 @@
+
+  <html>
+    <head>
+      <meta charset="UTF-8">
+
+      <title>title</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- jquery -->
+      <script src="jquery.min.js"></script>
+
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="css/materialize.min.css">
+
+      <!-- icon -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+      <script src="js/materialize.min.js"></script>
+
+
+      <link href="font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+      <!-- Compiled and minified JavaScript -->
+
+      <style>
+        header, main, footer {
+          padding-left: 300px;
+        }
+        html {
+          font-family: GillSans, Calibri, Trebuchet, sans-serif;
+        }
+
+        @media only screen and (max-width : 992px) {
+          header, main, footer {
+            padding-left: 0;
+          }
+        }
+
+        div .container {
+          margin-top: 14px;
+          margin-bottom: 14px
+        }
+
+        div .row {
+          margin-top: 14px;
+          margin-bottom: 14px
+        }
+        .row-btn .btn-flat i{
+          font-size:4em;
+        }
+        .row-btn .btn-flat a {
+          color:rgba(0,0,0,0.87);
+        }
+      </style>
+    </head>
+    <body>
+
+
+
+
+
+
+    <!-- navbar -->
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">FlowerWorks</a>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <!-- <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul> -->
+      </div>
+    </nav>
+
+
+
+
+
+
+
+    <!-- collapsible menu -->
+    <ul id="slide-out" class="side-nav">
+      <li><a href="#!">First Sidebar Link</a></li>
+      <li><a href="#!">Second Sidebar Link</a></li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Dropdown<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">First</a></li>
+                <li><a href="#!">Second</a></li>
+                <li><a href="#!">Third</a></li>
+                <li><a href="#!">Fourth</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#!">First Sidebar Link</a></li>
+      <li><a href="#!">Second Sidebar Link</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="#!">First</a></li>
+        <li><a href="#!">Second</a></li>
+        <li><a href="#!">Third</a></li>
+        <li><a href="#!">Fourth</a></li>
+      </ul>
+    </ul>
+
+
+
+    <!-- search bar -->
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <nav>
+            <div class="nav-wrapper">
+              <form>
+                <div class="input-field">
+                  <input id="search" type="search" required>
+                  <label for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
+            </div>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- icons -->
+    <div class="container">
+      <div class="row">
+        <div class="col s6 center">
+          <div class="file-field input-field btn-camera row-btn">
+              <div class="btn-flat">
+                <a href="camera.html"><i class="fa fa-camera fa-5x" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+        </div>
+        <div class="col s6 center">
+            <div class="file-field input-field btn-folder row-btn">
+              <div class="btn-flat">
+                <i class="fa fa-folder-open fa-5x" aria-hidden="true"></i>
+                <input type="file">
+              </div>
+            </div>
+           </div>
+
+
+      </div>
+    </div>
+
+
+
+    <!-- history -->
+    <div class="container">
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="img/sunflower.jpg" alt="" class="circle">
+          <span class="title">Title</span>
+          <p>First Line <br>
+             Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle">folder</i>
+          <span class="title">Title</span>
+          <p>First Line <br>
+             Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle green">insert_chart</i>
+          <span class="title">Title</span>
+          <p>First Line <br>
+             Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle red">play_arrow</i>
+          <span class="title">Title</span>
+          <p>First Line <br>
+             Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+
+    <!-- pagination of history -->
+    <ul class="pagination center">
+      <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+      <li class="active"><a href="#!">1</a></li>
+      <li class="waves-effect"><a href="#!">2</a></li>
+      <li class="waves-effect"><a href="#!">3</a></li>
+      <li class="waves-effect"><a href="#!">4</a></li>
+      <li class="waves-effect"><a href="#!">5</a></li>
+      <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <script>
+
+// Initialize collapse button
+  $(".button-collapse").sideNav();
+  // $('.button-collapse').sideNav({
+  //     menuWidth: 300, // Default is 240
+  //     edge: 'right', // Choose the horizontal origin
+  //     closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+  //   }
+  // );
+
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
+  </script>
+
+
+    </body>
+  </html>

@@ -23,6 +23,10 @@
       <!-- font awesome -->
       <link href="font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
+
+      <!-- oleo script font -->
+      <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+
       <!-- Compiled and minified JavaScript -->
 
       <style>
@@ -49,6 +53,10 @@
           margin-bottom: 14px
         }
 
+        .brand-logo {
+          font-family: 'Oleo Script', cursive;
+        }
+
       </style>
       <script>
         $(document).ready(function(){
@@ -56,7 +64,7 @@
           $('.modal-trigger').leanModal();
 
           $('#submit1').click(function(){
-            if($('#Helianthus').is(':checked')){ 
+            if($('#Helianthus').is(':checked')){
               $('.modal-title').text("Correct");
             }else{
               $('.modal-title').text("Wrong");
@@ -69,35 +77,45 @@
     <body>
 
 
+
+
+
+
+
+
+
     <!-- navbar -->
-
-
-
-
-
-
-
-
-    <!-- collapsible menu -->
     <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">FlowerWorks</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+      <div class="nav-wrapper container">
+        <a href="#!" class="brand-logo">Quiz</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
+          <li><a href="index.html" class="waves-effect waves-teal">Home</a></li>
+          <li><a href="camera.html" class="waves-effect waves-teal">Camera</a></li>
+          <li><a href="quiz.html" class="waves-effect waves-teal">Quiz</a></li>
+          <li><a href="history.html" class="waves-effect waves-teal">History</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">About</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
+          <li><a href="index.html" class="waves-effect waves-teal">Home</a></li>
+          <li><a href="camera.html" class="waves-effect waves-teal">Camera</a></li>
+          <li><a href="quiz.html" class="waves-effect waves-teal">Quiz</a></li>
+          <li><a href="history.html" class="waves-effect waves-teal">History</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">About</a></li>
         </ul>
       </div>
     </nav>
 
+
+
+
+
+
+
+
+    <!-- quiz -->
     <div class="container">
       <h2>Quiz</h2>
       <div class="row">
@@ -122,7 +140,7 @@
                     <input name="group1" type="radio" id="Lilium"  />
                     <label for="Lilium">Lilium</label>
                   </p>
-               
+
               </div>
 
 
@@ -141,7 +159,7 @@
                   <a class="modal-action modal-close waves-effect waves-green btn-flat ">Ok!</a>
                 </div>
               </div>
-            
+
 
 
 
