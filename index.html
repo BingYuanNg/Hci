@@ -4,7 +4,7 @@
       <meta charset="UTF-8">
 
       <title>title</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes">
 
       <!-- jquery -->
       <script src="jquery.min.js"></script>
@@ -98,6 +98,9 @@
         .row-carousel {
           margin-top:22px;
         }
+        .side-nav .logo {
+          height: 100px;
+        }
       </style>
     </head>
     <body>
@@ -127,6 +130,12 @@ about -->
           <li><a href="#">About</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
+          <!-- <li class="logo container center">
+            <a href="#" class="logo waves-effect waves-teal"><img src="img/flowerworks.png" height="100" width="100"></a>
+          </li> -->
+          <div class="container center">
+            <img src="img/flowerworks.png" height="100" width="100">
+          </div>
           <li><a href="index.html" class="waves-effect waves-teal">Home</a></li>
           <li><a href="camera.html" class="waves-effect waves-teal">Camera</a></li>
           <li><a href="quiz.html" class="waves-effect waves-teal">Quiz</a></li>
@@ -198,12 +207,12 @@ about -->
           <i class="material-icons">add</i>
         </a>
         <ul>
-          <li><a href="camera.html" class="btn-floating green"><i class="fa fa-camera fa-1"></i></a></li>
+          <li><a href="camera.html" class="btn-floating green"><i class="fa fa-camera"></i></a></li>
           <li>
             <a class="btn-floating blue">
               <div class="file-field input-field btn-upload center">
                 <i class="fa fa-upload upload"></i>
-                <input type="file">
+                <input id="upload" type="file" >
               </div>
             </a>
           </li>
@@ -220,6 +229,9 @@ about -->
     $(".button-collapse").sideNav();
     $('.carousel.carousel-slider').carousel({full_width: true});
 
+    $("#upload").on('change',function(){
+      window.location.href = "result.html";
+    });
   });
   // $('.button-collapse').sideNav({
   //     menuWidth: 300, // Default is 240

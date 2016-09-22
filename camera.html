@@ -2,16 +2,21 @@
   <head>
     <meta charset="UTF-8">
     <title>title</title>
+
     <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <meta name="HandheldFriendly" content="true">
 
+    <script src="jquery.min.js"></script>
 
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
     <!-- oleo script font -->
@@ -64,8 +69,33 @@
       .brand-logo {
         font-family: 'Oleo Script', cursive;
       }
+
+      .switch {
+        position: absolute;
+        z-index: 99;
+      }
   </style>
   <body>
+
+
+
+
+
+
+
+    <!-- flash toggle -->
+    <div class="switch">
+      <label>
+        Off
+        <input type="checkbox">
+        <span class="lever"></span>
+        On
+      </label>
+    </div>
+
+
+
+
 
 
     <!-- side navigation -->
@@ -74,16 +104,26 @@
         <a href="#!" class="brand-logo">Camera</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
+          <li><a href="index.html" class="waves-effect waves-teal">Home</a></li>
+          <li><a href="camera.html" class="waves-effect waves-teal">Camera</a></li>
+          <li><a href="quiz.html" class="waves-effect waves-teal">Quiz</a></li>
+          <li><a href="history.html" class="waves-effect waves-teal">History</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">About</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">Javascript</a></li>
-          <li><a href="mobile.html">Mobile</a></li>
+          <!-- <li class="logo container center">
+            <a href="#" class="logo waves-effect waves-teal"><img src="img/flowerworks.png" height="100" width="100"></a>
+          </li> -->
+          <div class="container center">
+            <img src="img/flowerworks.png" height="100" width="100">
+          </div>
+          <li><a href="index.html" class="waves-effect waves-teal">Home</a></li>
+          <li><a href="camera.html" class="waves-effect waves-teal">Camera</a></li>
+          <li><a href="quiz.html" class="waves-effect waves-teal">Quiz</a></li>
+          <li><a href="history.html" class="waves-effect waves-teal">History</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">About</a></li>
         </ul>
       </div>
     </nav>
@@ -92,95 +132,105 @@
 
 
 
-
+    <!-- viewfinder -->
     <video id="video" class="center" witdh="100%" autoplay></video>
     <div class="footer">
         <center>
             <div id="snap">
-                <a href="result.html" class="btn-floating btn-large waves-effect waves-light red"><i class="fa fa-camera"></i></a>
+                <a href="result.html" class="btn-floating btn-large red"><i class="fa fa-camera"></i></a>
             </div>
         </center>
     </div>
     <canvas id="canvas"></canvas>
 
-  <div class="select">
-    <label for="videoSource">Video source: </label><select id="videoSource"></select>
-  </div>
+
+
+
+
+
+    <div class="select">
+      <label for="videoSource">Video source: </label><select id="videoSource"></select>
+    </div>
 
 
 
 
     <script>
+    var sources = [];
     $(document).ready(function($) {
-     
-      
-    var videoElement = document.querySelector('video');
-    var videoSelect = document.querySelector('select#videoSource');
-    var lastChild = document.querySelector('select#videoSource:last-child');
+      var videoElement = document.querySelector('video');
+      var videoSelect = $('select#videoSource');
 
-    navigator.getUserMedia = navigator.getUserMedia ||
-      navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+      navigator.getUserMedia = navigator.getUserMedia ||
+        navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
-    function gotSources(sourceInfos) {
-      for (var i = 0; i !== sourceInfos.length; ++i) {
-        var sourceInfo = sourceInfos[i];
-        var option = document.createElement('option');
-        option.value = sourceInfo.id;
-        if (sourceInfo.kind === 'video') {
-          option.text = 'camera ' + (videoSelect.length + 1);
-          videoSelect.appendChild(option);
-        } else {
-          console.log('Some other kind of source: ', sourceInfo);
+      function gotSources(sourceInfos) {
+        for (var i = 0; i !== sourceInfos.length; ++i) {
+          var sourceInfo = sourceInfos[i];
+          var option = document.createElement('option');
+          option.value = sourceInfo.id;
+          if (sourceInfo.kind === 'video') {
+            option.text = 'camera ' + (videoSelect.length + 1);
+            videoSelect.prepend(option);
+
+            // ck
+            sources.push(sourceInfo);
+            console.log(sourceInfo);
+          } else {
+            console.log('Some other kind of source: ', sourceInfo);
+          }
         }
       }
-    }
 
-    if (typeof MediaStreamTrack === 'undefined'){
-      alert('This browser does not support MediaStreamTrack.\n\nTry Chrome Canary.');
-    } else {
-      MediaStreamTrack.getSources(gotSources);
-    }
+      // ck
+      console.log(sources);
 
 
-    function successCallback(stream) {
-      window.stream = stream; // make stream available to console
-      videoElement.src = window.URL.createObjectURL(stream);
-      videoElement.play();
-    }
-
-    function errorCallback(error){
-      console.log('navigator.getUserMedia error: ', error);
-    }
-
-    function start(){
-      if (!!window.stream) {
-        videoElement.src = null;
-        window.stream.stop();
+      if (typeof MediaStreamTrack === 'undefined'){
+        alert('This browser does not support MediaStreamTrack.\n\nTry Chrome Canary.');
+      } else {
+        MediaStreamTrack.getSources(gotSources);
       }
-      var videoSource = lastChild.value;
-      var constraints = {
-        video: {
-          optional: [{sourceId: videoSource}]
+
+
+      function successCallback(stream) {
+        window.stream = stream; // make stream available to console
+        videoElement.src = window.URL.createObjectURL(stream);
+      }
+
+      function errorCallback(error){
+        console.log('navigator.getUserMedia error: ', error);
+      }
+
+      function start(){
+        if (!!window.stream) {
+          videoElement.src = null;
+          window.stream.stop();
         }
-      };
-      navigator.getUserMedia(constraints, successCallback, errorCallback);
-    }
+        var videoSource = videoSelect.value;
+        var constraints = {
+          video: {
+            optional: [{sourceId: videoSource}]
+          }
+        };
+        navigator.getUserMedia(constraints, successCallback, errorCallback);
+      }
+      console.log(videoSource);
+      videoSelect.onchange = start;
 
-    videoSelect.onchange = start;
+      start();
+        // Grab elements, create settings, etc.
+        // var video = document.getElementById('video');
 
-    start();
-      // Grab elements, create settings, etc.
-      // var video = document.getElementById('video');
-
-      // // Get access to the camera!
-      // if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      //     // Not adding `{ audio: true }` since we only want video now
-      //     //
-      //     navigator.mediaDevices.getUserMedia({ video: true } ).then(function(stream) {
-      //         video.src = window.URL.createObjectURL(stream);
-      //         video.play();
-      //     });
-      // }
+        // // Get access to the camera!
+        // if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        //     // Not adding `{ audio: true }` since we only want video now
+        //     //
+        //     navigator.mediaDevices.getUserMedia({ video: true } ).then(function(stream) {
+        //         video.src = window.URL.createObjectURL(stream);
+        //         video.play();
+        //     });
+        // }
 
 
 
@@ -204,7 +254,7 @@
           }, errBack);
       }
       */
-     
+
     });
     </script>
   </body>
