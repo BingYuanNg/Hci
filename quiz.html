@@ -33,6 +33,17 @@
 
 
       <style>
+
+        * {
+          -webkit-backface-visibility: hidden;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
         header, main, footer {
           padding-left: 300px;
         }
@@ -59,10 +70,10 @@
         .brand-logo {
           font-family: 'Oleo Script', cursive;
         }
-
       </style>
 
   </head>
+
   <body>
 
     <!-- navbar -->
@@ -110,27 +121,27 @@
               <span class="card-title">Question 1</span>
             </div>
             <form>
-            <div class="card-content">
-              <p>What is the scientific name of the above flower?</p>
-                <p>
-                  <input name="group1" type="radio" id="Helianthus" />
-                  <label for="Helianthus">Helianthus</label>
-                </p>
-                <p>
-                  <input name="group1" type="radio" id="Nelumbo" />
-                  <label for="Nelumbo">Nelumbo Nucifera</label>
-                </p>
-                <p>
-                  <input name="group1" type="radio" id="Lilium"  />
-                  <label for="Lilium">Lilium</label>
-                </p>
-            </div>
+              <div class="card-content">
+                <p>What is the scientific name of the above flower?</p>
+                  <p>
+                    <input name="group1" type="radio" id="Helianthus" />
+                    <label for="Helianthus">Helianthus</label>
+                  </p>
+                  <p>
+                    <input name="group1" type="radio" id="Nelumbo" />
+                    <label for="Nelumbo">Nelumbo Nucifera</label>
+                  </p>
+                  <p>
+                    <input name="group1" type="radio" id="Lilium"  />
+                    <label for="Lilium">Lilium</label>
+                  </p>
+              </div>
 
 
 
-            <div class="card-action">
-              <a id="submit1" class="modal-trigger waves-effect waves-light btn" href="#modal1">Submit</a>
-            </div>
+              <div class="card-action">
+                <a id="submit1" class="modal-trigger waves-effect waves-light btn" href="#modal1">Submit</a>
+              </div>
            </form>
               <!-- Modal -->
           <div id="modal1" class="modal modal-fixed-footer">
@@ -144,42 +155,46 @@
           </div>
         </div>
       </div>
-  
+    </div>
+
+
+
+    <div class="row">
       <!-- question 2 -->
-      <div class="col s12 m7">
+        <div class="col s12 m7">
           <div class="card">
             <div class="card-image">
               <img src="img/blue1.jpg">
               <span class="card-title">Question 2</span>
             </div>
             <form>
-            <div class="card-content">
-              <p>What is the scientific name of the above flower?</p>
-                <p>
-                  <input name="group1" type="radio" id="Helianthus" />
-                  <label for="Helianthus">Helianthus</label>
-                </p>
-                <p>
-                  <input name="group1" type="radio" id="Nelumbo" />
-                  <label for="Nelumbo">Nelumbo Nucifera</label>
-                </p>
-                <p>
-                  <input name="group1" type="radio" id="Lilium"  />
-                  <label for="Lilium">Lilium</label>
-                </p>
-            </div>
+              <div class="card-content">
+                <p>What is the scientific name of the above flower?</p>
+                  <p>
+                    <input name="group2" type="radio" id="abc" />
+                    <label for="abc">Helianthus</label>
+                  </p>
+                  <p>
+                    <input name="group2" type="radio" id="def" />
+                    <label for="def">Nelumbo Nucifera</label>
+                  </p>
+                  <p>
+                    <input name="group2" type="radio" id="ghi"  />
+                    <label for="ghi">Lilium</label>
+                  </p>
+              </div>
 
 
 
-            <div class="card-action">
-              <a id="submit1" class="modal-trigger waves-effect waves-light btn" href="#modal1">Submit</a>
-            </div>
+              <div class="card-action">
+                <a id="submit2" class="modal-trigger waves-effect waves-light btn" href="#modal2">Submit</a>
+              </div>
            </form>
               <!-- Modal -->
-          <div id="modal1" class="modal modal-fixed-footer">
+          <div id="modal2" class="modal modal-fixed-footer">
             <div class="modal-content">
               <h4 class="modal-title">Helianthus</h4>
-              <p>Helianthus or sunflowers is a genus of plants comprising about 70 species in the family Asteraceae.The genus is one of many in the Asteraceae that are known as sunflowers. Except for three species in South America, all Helianthus species are native to North America. The common name, "sunflower", typically refers to the popular annual species Helianthus annuus, the common sunflower, whose round flower heads in combination with the ligules look like the sun. This and other species, notably Jerusalem artichoke (H. tuberosus), are cultivated in temperate regions as food crops and ornamental plants.</p>
+              <p>Nelumbo nucifera, also known as Indian lotus, sacred lotus, bean of India, or simply lotus, is one of two species of aquatic plant in the family Nelumbonaceae. The Linnaean binomial Nelumbo nucifera (Gaertn.) is the currently recognized name for this species, which has been classified under the former names, Nelumbium speciosum (Willd.) and Nymphaea nelumbo, among others. (These names are obsolete synonyms and should be avoided in current works.) This plant is an aquatic perennial. Under favorable circumstances its seeds may remain viable for many years, with the oldest recorded lotus germination being from that of seeds 1,300 years old recovered from a dry lakebed in northeastern China.</p>
             </div>
             <div class="modal-footer">
               <a class="modal-action modal-close waves-effect waves-green btn-flat ">Ok!</a>
@@ -187,42 +202,46 @@
           </div>
         </div>
       </div>
+    </div>
 
+    
+
+    <div class="row">
       <!-- question 3 -->
-      <div class="col s12 m7">
+        <div class="col s12 m7">
           <div class="card">
             <div class="card-image">
-              <img src="img/morning_glory.jpg">
+              <img src="img/blue1.jpg">
               <span class="card-title">Question 3</span>
             </div>
             <form>
-            <div class="card-content">
-              <p>What is the scientific name of the above flower?</p>
-                <p>
-                  <input name="group1" type="radio" id="Helianthus" />
-                  <label for="Helianthus">Helianthus</label>
-                </p>
-                <p>
-                  <input name="group1" type="radio" id="Nelumbo" />
-                  <label for="Nelumbo">Nelumbo Nucifera</label>
-                </p>
-                <p>
-                  <input name="group1" type="radio" id="Lilium"  />
-                  <label for="Lilium">Lilium</label>
-                </p>
-            </div>
+              <div class="card-content">
+                <p>What is the scientific name of the above flower?</p>
+                  <p>
+                    <input name="group2" type="radio" id="jkl" />
+                    <label for="jkl">Helianthus</label>
+                  </p>
+                  <p>
+                    <input name="group2" type="radio" id="mno" />
+                    <label for="mno">Nelumbo Nucifera</label>
+                  </p>
+                  <p>
+                    <input name="group2" type="radio" id="pqr"  />
+                    <label for="pqr">Lilium</label>
+                  </p>
+              </div>
 
 
 
-            <div class="card-action">
-              <a id="submit1" class="modal-trigger waves-effect waves-light btn" href="#modal1">Submit</a>
-            </div>
+              <div class="card-action">
+                <a id="submit3" class="modal-trigger waves-effect waves-light btn" href="#modal3">Submit</a>
+              </div>
            </form>
               <!-- Modal -->
-          <div id="modal1" class="modal modal-fixed-footer">
+          <div id="modal3" class="modal modal-fixed-footer">
             <div class="modal-content">
               <h4 class="modal-title">Helianthus</h4>
-              <p>Helianthus or sunflowers is a genus of plants comprising about 70 species in the family Asteraceae.The genus is one of many in the Asteraceae that are known as sunflowers. Except for three species in South America, all Helianthus species are native to North America. The common name, "sunflower", typically refers to the popular annual species Helianthus annuus, the common sunflower, whose round flower heads in combination with the ligules look like the sun. This and other species, notably Jerusalem artichoke (H. tuberosus), are cultivated in temperate regions as food crops and ornamental plants.</p>
+              <p>Lilium (members of which are true lilies) is a genus of herbaceous flowering plants growing from bulbs, all with large prominent flowers. Lilies are a group of flowering plants which are important in culture and literature in much of the world. Most species are native to the temperate northern hemisphere, though their range extends into the northern subtropics. Many other plants have "lily" in their common name but are not related to true lilies.</p>
             </div>
             <div class="modal-footer">
               <a class="modal-action modal-close waves-effect waves-green btn-flat ">Ok!</a>
@@ -230,27 +249,46 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
+
+
+
+
+
   </div>   
-  <script>
-  $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-    
-    $(".button-collapse").sideNav();
+        <script>
+          $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
+            
+            $(".button-collapse").sideNav();
 
-    $('#submit1').click(function(){
-      if($('#Helianthus').is(':checked')){
-        $('.modal-title').text("Correct");
-      }else{
-        $('.modal-title').text("Wrong");
-      }
-    })
+            $('#submit1').click(function(){
+              if($('#Helianthus').is(':checked')){
+                $('#modal1 .modal-title').text("Correct");
+              }else{
+                $('#modal1 .modal-title').text("Wrong");
+              }
+            })
 
-  });
-  </script>
+             $('#submit2').click(function(){
+              if($('#def').is(':checked')){
+                $('#modal2 .modal-title').text("Correct");
+              }else{
+                $('#modal2 .modal-title').text("Wrong");
+              }
+            })
+
+            $('#submit3').click(function(){
+              if($('#pqr').is(':checked')){
+                $('#modal3 .modal-title').text("Correct");
+              }else{
+                $('#modal3 .modal-title').text("Wrong");
+              }
+            })
+
+
+          });
+        </script>
   </body>
 </html>

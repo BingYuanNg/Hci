@@ -73,6 +73,16 @@
       .switch {
         position: absolute;
         z-index: 99;
+        top:80px;
+        left:10px;
+      }
+
+      .caption {
+        position: absolute;
+        z-index: 99;
+        top:80px;
+        left:20px;
+
       }
   </style>
   <body>
@@ -80,19 +90,16 @@
 
 
 
-
-
-
     <!-- flash toggle -->
-    <div class="switch">
-      <label>
-        Off
-        <input type="checkbox">
-        <span class="lever"></span>
-        On
+    <div class="switch valign-wrapper">
+      <label class="valign">
+        <i class="fa fa-bolt fa-2x flash"></i>
       </label>
     </div>
 
+    <div class="caption container">
+      <center>Flower detected!</center>
+    </div>
 
 
 
@@ -158,6 +165,8 @@
     <script>
     var sources = [];
     $(document).ready(function($) {
+        Materialize.toast('I am a toast!', 2000) // 4000 is the duration of the toast
+
       var videoElement = document.querySelector('video');
       var videoSelect = $('select#videoSource');
 
