@@ -29,11 +29,15 @@
         overflow: hidden;
       }
       #video {
-        height:95%;
         position: relative;
         top:0;
         left: 0;
         right:0;
+
+        min-width: 100%; 
+        min-height: 95%;
+        width: auto; 
+        height: auto; 
       }
       .footer {
         position:absolute;
@@ -73,17 +77,20 @@
       .switch {
         position: absolute;
         z-index: 99;
-        top:80px;
+        top:70px;
         left:10px;
       }
 
       .caption {
         position: absolute;
+        margin-left: auto;
+        margin-right: auto;
         z-index: 99;
-        top:80px;
-        left:20px;
-
+        top:70px;
+        left: 0;
+        right: 0;
       }
+
   </style>
   <body>
 
@@ -165,8 +172,7 @@
     <script>
     var sources = [];
     $(document).ready(function($) {
-        Materialize.toast('I am a toast!', 2000) // 4000 is the duration of the toast
-
+      
       var videoElement = document.querySelector('video');
       var videoSelect = $('select#videoSource');
 
@@ -242,7 +248,13 @@
         // }
 
 
-
+       $(".flash").click(function(event) {
+        if( $(".flash").hasClass('fa-inverse') ){
+          $(".flash").removeClass('fa-inverse'); 
+        }else{
+          $(".flash").addClass('fa-inverse');
+        } 
+       });
 
        $(".button-collapse").sideNav();
       /* Legacy code below: getUserMedia
